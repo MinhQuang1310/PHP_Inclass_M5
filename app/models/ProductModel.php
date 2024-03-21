@@ -48,6 +48,8 @@ class ProductModel{
             return $errors;
         }
 
+        
+
         // Truy vấn tạo sản phẩm mới
 
         $query = "INSERT INTO " . $this->table_name . " (name, description, pricec, image) VALUES (:name, :description, :pricec, :image)";

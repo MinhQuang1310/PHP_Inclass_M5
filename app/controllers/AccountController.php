@@ -9,14 +9,14 @@ class AccountController
         $this->db = (new Database())->getConnection();
         $this->accountModel = new AccountModel($this->db);
     }
-    public function Login() {
+    // public function Login() {
 
-        $database = new Database();
-        $db = $database->getConnection();
+    //     $database = new Database();
+    //     $db = $database->getConnection();
 
-        include_once 'app/views/users/login.php';
+    //     include_once 'app/views/users/login.php';
 
-    }
+    // }
     public function Register() {
 
         $database = new Database();
@@ -84,5 +84,35 @@ class AccountController
             }
         }
     }
+    public function Login() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $email = $_POST['email'] ?? '';
+            $password = $_POST['password'] ?? '';
+    
+            // Kiểm tra xem email và mật khẩu có trống không
+            if(empty($email) || empty($password)){
+                $error = "Email or Password cannot be empty!";
+                include_once 'app/views/users/login.php';
+                return;
+            }
+    
+            // Gọi phương thức kiểm tra tài khoản từ model
+            $account = $this->accountModel->checkAccount($email, $password);
+    
+            if ($account) {
+                // Nếu tài khoản tồn tại, đặt cookie và chuyển hướng người dùng
+                setcookie('user', serialize($account), time() + (86400 * 30), "/"); // 86400 = 1 day
+                header('Location: /Sang5/Product/Index');
+            } else {
+                // Nếu tài khoản không tồn tại, hiển thị lỗi
+                $error = "Invalid Email or Password!";
+                include_once 'app/views/users/login.php';
+            }
+        } else {
+            include_once 'app/views/users/login.php';
+        }
+    }
+    
+    
     
 }

@@ -138,4 +138,19 @@ class AccountModel{
         }
         return false;
     }
+    public function checkAccount($email, $password) {
+        $query = "SELECT * FROM " . $this->table_name . " WHERE email = :email";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        $account = $stmt->fetch(PDO::FETCH_OBJ);
+    
+        // Kiểm tra xem mật khẩu có khớp không
+        if ($account && password_verify($password, $account->password)) {
+            return $account;
+        }
+    
+        return false;
+    }
+    
 }
