@@ -38,15 +38,7 @@
                             <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
-                                    <?php
-                                    if (isset ($error)) {
-                                        echo "<ul>";
-                                        foreach ($errors as $err) {
-                                            echo "<li>" . $err . "</li>";
-                                        }
-                                        echo "</ul>";
-                                    }
-                                    ?>
+                                    
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>

@@ -55,6 +55,7 @@ class AccountController
                 $errors = $result;
                 include_once 'app/views/users/register.php'; 
             } else {
+                // Lưu vào cô
                 header('Location: /Sang5/Product/Index');
             }
         }

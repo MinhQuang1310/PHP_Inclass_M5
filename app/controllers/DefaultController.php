@@ -11,7 +11,12 @@ class DefaultController
     }
     public function Index()
     {
+        if(!SessionHepler::isLoggedIn()){
+            header('Location: /Sang5/account/login');
+            exit();
+        }
         $products = $this->productModel->readAll();
+        include_once('app/views/share/index.php');
     }
     
 }
