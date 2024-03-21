@@ -31,7 +31,7 @@ class AccountController
             $lastname = $_POST['lastname'] ?? '';
             $email = $_POST['email'] ??'';
             $password = $_POST['password'] ??'';
-            $confirmpassword = $_POST['confirmpassword'] ?? '';
+            $confirmpassword = $_POST['comfirmpassword'] ?? '';
 
 
 
@@ -50,7 +50,7 @@ class AccountController
             //     $result = $this->productModel->createProduct($name, $description, $pricec, $uploadresult);
             // }
 
-            $result =  $this->accountModel->save($firstname, $lastname, $email, $password, $confirmpassword);
+            $result =  $this->accountModel->createAccount($firstname, $lastname, $email, $password, $confirmpassword);
             if (is_array($result)) {
                 $errors = $result;
                 include_once 'app/views/users/register.php'; 

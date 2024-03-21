@@ -40,17 +40,17 @@ class AccountModel{
         }
     }
 
-    public function getAccountById($id)
-    {
-        $query = "SELECT * FROM ". $this->table_name." where id = $id";
+    // public function getAccountById($id)
+    // {
+    //     $query = "SELECT * FROM ". $this->table_name." where id = $id";
 
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_OBJ);
-        return $result;
-    }
+    //     $stmt = $this->conn->prepare($query);
+    //     $stmt->execute();
+    //     $result = $stmt->fetch(PDO::FETCH_OBJ);
+    //     return $result;
+    // }
 
-    public function createAccount($firstname, $lastname, $email, $password, $confirmpassword)
+    public function createAccount($firstname, $lastname, $email, $password, $comfirmpassword)
     {
         // Kiểm tra ràng buộc đầu vào
         $error=[];
@@ -66,7 +66,7 @@ class AccountModel{
         if(empty($password)){
             $error['password'] = "Please enter Password!";
         }
-        if(empty($confirmpassword)){
+        if(empty($comfirmpassword)){
             $error['comfirmpassword'] = "Please confirm your Password!";
         }
         if(count($error) > 0){
