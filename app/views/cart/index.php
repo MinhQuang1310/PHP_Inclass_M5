@@ -34,15 +34,15 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
             </form>
             
             </li>";
-            $totalAll += $total;
-            
+            $totalAll += $total;           
     }
     echo "<p class='text-danger'>Total price: <input name='price' type='number' value='$totalAll'/></p>";
     echo "<li class='m-3'><a href='/sang5/product/index' class='btn btn-primary'>Countinue shopping</a></li></hr>";
-    echo "<li class='m-3'><a href='#' class='btn btn-primary'>Checkout</a></li>";
+    echo "<li class='m-3'><a href='/sang5/order/index' class='btn btn-primary'>Checkout</a></li>";
     echo "</ul>";
     $_SESSION['cartItems'] = $cartItems;
     $_SESSION['totalAll'] = $totalAll;
+    $_SESSION['total'] = $total;
 }
 
 include_once 'app/views/share/footer.php';
