@@ -5,30 +5,45 @@ include_once 'app/views/share/header.php';
 if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
     echo "Giỏ hàng trống!";
 } else {
+    $total = 0;
+    $totalAll = 0;
+    $cartItems = $_SESSION['cart'];
     // Hiển thị danh sách sản phẩm trong giỏ hàng
     echo "<h2>Danh sách giỏ hàng</h2>";
     echo "<ul>";
-    foreach ($_SESSION['cart'] as $item) {
+    foreach ($cartItems as $item) {
         $total = $item->pricec * $item->quantity;
-        echo "<li class='m-3'>$item->name 
+        echo "<li class='m-3'> $item->name 
             
-            <form method='post' action='/php_inclass_m5/cart/updateQuality/$item->id'>
-                <a href='/php_inclass_m5/cart/decreaseQuantity/$item->id' class='btn btn-primary'>-</a>
-                <input name='quality' type='number' value='$item->quantity'/>
-                <a href='/php_inclass_m5/cart/increaseQuantity/$item->id' class='btn btn-primary'>+</a>
-                <a href='/php_inclass_m5/cart/removeItem/$item->id' class='btn btn-primary'>Remove</a>
-                <p class='h4 text-danger'>$total</p>
+            <form method='post' action='/sang5/cart/updateQuantity/$item->id'>
+            <tr>
+                <td>
+                    
+                    <a href='/sang5/cart/decreaseQuantity/$item->id' class='btn btn-primary'>-</a>
+                
+                    <input name='quantity' type='number' value='$item->quantity'/> <!-- Changed name to quantity -->
+                
+                    <input name='price' type='number' value='$total'/>
+
+                    <a href='/sang5/cart/increaseQuantity/$item->id' class='btn btn-primary'>+</a>
+                </td>
+                <td>
+                    <a href='/sang5/cart/removeItem/$item->id' class='btn btn-primary'>Remove</a>
+                </td>
+            </tr>
             </form>
             
             </li>";
+            $totalAll += $total;
             
     }
-    echo "<li class='m-3'><a href='/php_inclass_m5/product/index' class='btn btn-primary'>Countinue shopping</a></li></hr>";
+    echo "<p class='text-danger'>Total price: <input name='price' type='number' value='$totalAll'/></p>";
+    echo "<li class='m-3'><a href='/sang5/product/index' class='btn btn-primary'>Countinue shopping</a></li></hr>";
     echo "<li class='m-3'><a href='#' class='btn btn-primary'>Checkout</a></li>";
     echo "</ul>";
-    echo "<a href='/php_inclass_m5' class='btn btn-primary'>Back site</a>";
+    $_SESSION['cartItems'] = $cartItems;
+    $_SESSION['totalAll'] = $totalAll;
 }
-
 
 include_once 'app/views/share/footer.php';
 ?>
