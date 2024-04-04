@@ -40,15 +40,15 @@ class AccountModel{
         }
     }
 
-    // public function getAccountById($id)
-    // {
-    //     $query = "SELECT * FROM ". $this->table_name." where id = $id";
+    public function getAccountByEmail($email)
+    {
+        $query = "SELECT * FROM ". $this->table_name." where email = $email";
 
-    //     $stmt = $this->conn->prepare($query);
-    //     $stmt->execute();
-    //     $result = $stmt->fetch(PDO::FETCH_OBJ);
-    //     return $result;
-    // }
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_OBJ);
+        return $result;
+    }
 
     public function createAccount($firstname, $lastname, $email, $password, $comfirmpassword)
     {
@@ -69,8 +69,9 @@ class AccountModel{
         if(empty($comfirmpassword)){
             $error['comfirmpassword'] = "Please confirm your Password!";
         }
-        if(count($error) > 0){
-            return $error;
+        $emailIsPresent = $this -> getAccountByEmail($email);
+        if($emailIsPresent){
+            $error['email'] = "Email is exist!";
         }
 
         // Mã hóa mật khẩu
@@ -139,6 +140,17 @@ class AccountModel{
         return false;
     }
     public function checkAccount($email, $password) {
+        $error=[];
+        if(empty($email)){
+            $error['email'] = "Please enter your Email!";
+        }
+        if(empty($password)){
+            $error['password'] = "Please enter Password!";
+        }
+        if(count($error) > 0){
+            return $error;
+        }
+
         $query = "SELECT * FROM " . $this->table_name . " WHERE email = :email";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':email', $email);

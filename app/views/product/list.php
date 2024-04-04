@@ -1,10 +1,13 @@
 <?php
+
 include_once 'app/views/share/header.php'
     ?>
 <?php
 require_once 'app/controllers/ProductController.php';
 // Khởi tạo controller
 $productController = new ProductController();
+
+
 
 // Gọi phương thức để lấy danh sách sản phẩm
 $productController->Index();
@@ -14,9 +17,7 @@ $productController->Index();
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Tables</h1>
     <a href="/Sang5/Product/add" class="btn btn-primary">Them San Pham</a>
-    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-        For more information about DataTables, please visit the <a target="_blank"
-            href="https://datatables.net">official DataTables documentation</a>.</p>
+    
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -62,7 +63,7 @@ $productController->Index();
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
                                             colspan="1" aria-label="Price: activate to sort column ascending"
                                             style="width: 100px;">Price</th>
-                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
                                             colspan="1" aria-label="Image: activate to sort column ascending"
                                             style="width: 100px;">Image</th>
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
@@ -73,27 +74,36 @@ $productController->Index();
                                 <tbody>
                                     <?php while ($row = $stmt->fetch(PDO::FETCH_OBJ)): ?>
                                         <tr>
-                                            <td><?= $row->id ?></td>
-                                            <td><?= $row->name ?></td>
-                                            <td><?= $row->description ?></td>
-                                            <td><?= $row->pricec ?></td>
                                             <td>
-                                                <?php 
-                                                    if(!empty($row->image)) {
-                                                        echo "<img src='/Sang5/".$row->image."' alt='' style='width: 100px; height: 100px;' />";
-                                                    }
-                                                    else {
-                                                        echo "No Image";                                                    }
-                                                ?>    
+                                                <?= $row->id ?>
                                             </td>
                                             <td>
-                                                <i><a href="edit/<?=$row->id?>" class="btn btn-primary">Edit</a></i>
+                                                <?= $row->name ?>
+                                            </td>
+                                            <td>
+                                                <?= $row->description ?>
+                                            </td>
+                                            <td>
+                                                <?= $row->pricec ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                if (!empty($row->image)) {
+                                                    echo "<img src='/Sang5/" . $row->image . "' alt='' style='width: 100px; height: 100px;' />";
+                                                } else {
+                                                    echo "No Image";
+                                                }
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <i><a href="edit/<?= $row->id ?>" class="btn btn-primary">Edit</a></i>
                                                 <i><a href="#" class="btn btn-primary">Delete</a></i>
+                                                <i><a href="/sang5/cart/add/<?= $row->id ?>" class="btn btn-primary">Add To Cart</a></i>
                                             </td>
                                         </tr>
                                     <?php endwhile; ?>
                                 </tbody>
-                            </table>    
+                            </table>
                         </div>
                     </div>
                     <div class="row">

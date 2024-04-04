@@ -9,14 +9,15 @@ class DefaultController
         $this->db = (new Database())->getConnection();
         $this->productModel = new ProductModel($this->db);
     }
-    public function Index()
-    {
-        if(!SessionHepler::isLoggedIn()){
-            header('Location: /Sang5/account/login');
-            exit();
+    public function Index() {
+
+        if(!Auth::isAdmin()){
+            header('Location: /sang5/account/login');
         }
+        
         $products = $this->productModel->readAll();
-        include_once('app/views/share/index.php');
+
+        include_once 'app/views/share/index.php';
     }
     
 }
