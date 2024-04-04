@@ -9,9 +9,15 @@ class DefaultController
         $this->db = (new Database())->getConnection();
         $this->productModel = new ProductModel($this->db);
     }
-    public function Index()
-    {
+    public function Index() {
+
+        if(!Auth::isAdmin()){
+            header('Location: /sang5/account/login');
+        }
+        
         $products = $this->productModel->readAll();
+
+        include_once 'app/views/share/index.php';
     }
     
 }

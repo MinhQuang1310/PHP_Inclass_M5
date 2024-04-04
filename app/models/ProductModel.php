@@ -19,7 +19,7 @@ class ProductModel{
 
     public function getProductById($id)
     {
-        $query = "SELECT * FROM ". $this->table_name." where id = $id";
+        $query = "SELECT * FROM " . $this->table_name . " where id = $id";
 
         $stmt = $this->conn->prepare($query);
         $stmt->execute();

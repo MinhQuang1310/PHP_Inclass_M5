@@ -18,6 +18,7 @@ class ProductController{
         $stmt = $product->readAll();
 
         include_once 'app/views/product/list.php';
+        
 
     }
     public function add() {
