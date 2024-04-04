@@ -12,7 +12,7 @@ class DefaultController
     public function Index() {
 
         if(!Auth::isAdmin()){
-            header('Location: /sang5/account/login');
+            header('Location: /php_inclass_m5/account/login');
         }
         
         $products = $this->productModel->readAll();

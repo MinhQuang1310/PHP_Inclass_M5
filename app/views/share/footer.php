@@ -47,21 +47,21 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="/Sang5/public/vendor/jquery/jquery.min.js"></script>
-<script src="/Sang5/public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/php_inclass_m5/public/vendor/jquery/jquery.min.js"></script>
+<script src="/php_inclass_m5/public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="/Sang5/public/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="/php_inclass_m5/public/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="/Sang5/public/js/sb-admin-2.min.js"></script>
+<script src="/php_inclass_m5/public/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="/Sang5/public/vendor/chart.js/Chart.min.js"></script>
+<script src="/php_inclass_m5/public/vendor/chart.js/Chart.min.js"></script>
 
 <!-- Page level custom scripts -->
-<script src="/Sang5/public/js/demo/chart-area-demo.js"></script>
-<script src="/Sang5/public/js/demo/chart-pie-demo.js"></script>
+<script src="/php_inclass_m5/public/js/demo/chart-area-demo.js"></script>
+<script src="/php_inclass_m5/public/js/demo/chart-pie-demo.js"></script>
 
 </body>
 

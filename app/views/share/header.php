@@ -12,13 +12,13 @@
     <title>SB Admin 2 - Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link href="/Sang5/public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/php_inclass_m5/public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="/Sang5/public/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/php_inclass_m5/public/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -109,8 +109,8 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="/Sang5/Account/Login">Login</a>
-                        <a class="collapse-item" href="/Sang5/Account/Register">Register</a>
+                        <a class="collapse-item" href="/php_inclass_m5/Account/Login">Login</a>
+                        <a class="collapse-item" href="/php_inclass_m5/Account/Register">Register</a>
                         <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
@@ -129,7 +129,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/Sang5/Product/Index">
+                <a class="nav-link" href="/php_inclass_m5/Product/Index">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span></a>
             </li>
@@ -144,7 +144,7 @@
 
             <!-- Sidebar Message -->
             <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="/Sang5/public/img/undraw_rocket.svg" alt="...">
+                <img class="sidebar-card-illustration mb-2" src="/php_inclass_m5/public/img/undraw_rocket.svg" alt="...">
                 <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
                 <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
             </div>
@@ -274,7 +274,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="/Sang5/public/img/undraw_profile_1.svg"
+                                        <img class="rounded-circle" src="/php_inclass_m5/public/img/undraw_profile_1.svg"
                                             alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -286,7 +286,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="/Sang5/public/img/undraw_profile_2.svg"
+                                        <img class="rounded-circle" src="/php_inclass_m5/public/img/undraw_profile_2.svg"
                                             alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
@@ -298,7 +298,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="/Sang5/public/img/undraw_profile_3.svg"
+                                        <img class="rounded-circle" src="/php_inclass_m5/public/img/undraw_profile_3.svg"
                                             alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
@@ -334,7 +334,7 @@
                                 <?php echo isset($_SESSION['username']) ? $_SESSION['username'] :'Guest' ; ?>
                                 </span>
                                 <img class="img-profile rounded-circle"
-                                    src="/Sang5/public/img/undraw_profile.svg">
+                                    src="/php_inclass_m5/public/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

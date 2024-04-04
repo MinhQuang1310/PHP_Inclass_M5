@@ -61,7 +61,7 @@ class AccountController
                 session_start();
                 $_SESSION['user_role'] = 'user';
                 $_SESSION['username'] = $email;
-                header('Location: /Sang5/Product/Index');
+                header('Location: /php_inclass_m5/Product/Index');
             }
         }
     }
@@ -83,7 +83,7 @@ class AccountController
             $edit = $this->accountModel->updateAccount($id, $firstname, $lastname, $email, $password);
 
             if ($edit) {
-                header('Location: /Sang5/Product/Index');
+                header('Location: /php_inclass_m5/Product/Index');
             } else {
                 //thuc hien tuong tu nhu ham luu
                 echo "Đã xảy ra lỗi khi lưu sản phẩm.";
@@ -120,12 +120,12 @@ class AccountController
                 $_SESSION['username'] = $email;
 
                 // setcookie('user', serialize($account), time() + (86400 * 30), "/"); // 86400 = 1 day
-                header('Location: /Sang5/Product/Index');
+                header('Location: /php_inclass_m5/Product/Index');
 
 
                 // Nếu tài khoản tồn tại, đặt cookie và chuyển hướng người dùng
                 // setcookie('user', serialize($account), time() + (86400 * 30), "/"); // 86400 = 1 day
-                // header('Location: /Sang5/Product/Index');
+                // header('Location: /php_inclass_m5/Product/Index');
 
             }
         } else {
@@ -162,7 +162,7 @@ class AccountController
         session_destroy();
       
         // Redirect the user to the login page (or any other desired page)
-        header('Location: /Sang5/account/login');
+        header('Location: /php_inclass_m5/account/login');
       }
       
 }

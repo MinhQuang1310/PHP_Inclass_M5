@@ -12,13 +12,13 @@
     <title>SB Admin 2 - Login</title>
 
     <!-- Custom fonts for this template-->
-    <link href="/Sang5/public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/php_inclass_m5/public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="/Sang5/public/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/php_inclass_m5/public/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -45,7 +45,7 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user" action="/Sang5/Account/save" method="post">
+                            <form class="user" action="/php_inclass_m5/Account/save" method="post">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName"
@@ -87,7 +87,7 @@
                                 <a class="small" href="#">Forgot Password?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="/Sang5/account/Login">Already have an account? Login!</a>
+                                <a class="small" href="/php_inclass_m5/account/Login">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>
@@ -98,14 +98,14 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="/Sang5/public/vendor/jquery/jquery.min.js"></script>
-    <script src="/Sang5/public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/php_inclass_m5/public/vendor/jquery/jquery.min.js"></script>
+    <script src="/php_inclass_m5/public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="/Sang5/public/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/php_inclass_m5/public/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="/Sang5/public/js/sb-admin-2.min.js"></script>
+    <script src="/php_inclass_m5/public/js/sb-admin-2.min.js"></script>
 
 </body>
 

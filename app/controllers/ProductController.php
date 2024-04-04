@@ -86,7 +86,7 @@ class ProductController{
                 $errors = $result;
                 include_once 'app/views/product/add.php'; // Đường dẫn đến file form sản phẩm
             } else {
-                header('Location: /Sang5/Product/Index');
+                header('Location: /php_inclass_m5/Product/Index');
             }
         }
     }
@@ -116,7 +116,7 @@ class ProductController{
             $edit = $this->productModel->updateProduct($id, $name, $description, $pricec, $uploadresult);
 
             if ($edit) {
-                header('Location: /Sang5/Product/Index');
+                header('Location: /php_inclass_m5/Product/Index');
             } else {
                 //thuc hien tuong tu nhu ham luu
                 echo "Đã xảy ra lỗi khi lưu sản phẩm.";

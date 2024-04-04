@@ -1,5 +1,5 @@
 <?php
-include_once 'C:/xampp/htdocs/Sang5/app/views/share/header.php'
+include_once 'C:/xampp/htdocs/php_inclass_m5/app/views/share/header.php'
     ?>
 
 <?php
@@ -16,7 +16,7 @@ if (isset ($errors)) {
     <div class="text-center">
         <h1 class="h4 text-gray-900 mb-4">Sua San Pham</h1>
     </div>
-    <form class="user" action="/Sang5/Product/save" method="post" enctype="multipart/form-data">
+    <form class="user" action="/php_inclass_m5/Product/save" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?=$product->id?>" > 
         <div class="form-group">
             <input type="text" value="<?=$product->name ?>" class="form-control form-control-user" id="name"
@@ -33,7 +33,7 @@ if (isset ($errors)) {
         <div class="form-group">
             <?php
             if (!empty ($product->image)) {
-                echo "<img src='/Sang5/" . $product->image . "' alt='' style='width: 100px; height: 100px;' />";
+                echo "<img src='/php_inclass_m5/" . $product->image . "' alt='' style='width: 100px; height: 100px;' />";
             } else {
                 echo "No Image";
             }
@@ -49,5 +49,5 @@ if (isset ($errors)) {
 </div>
 
 <?php
-include_once 'C:/xampp/htdocs/Sang5/app/views/share/footer.php'
+include_once 'C:/xampp/htdocs/php_inclass_m5/app/views/share/footer.php'
     ?>

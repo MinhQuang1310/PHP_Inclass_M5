@@ -15,12 +15,12 @@ class CartController
     {
       // Check if cart session exists
       if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
-        header('Location: /sang5/cart/show'); // Redirect to cart view if empty
+        header('Location: /php_inclass_m5/cart/show'); // Redirect to cart view if empty
       }
     
       // Validate form data
       if (!isset($_POST['action']) || $_POST['action'] !== 'update') {
-        header('Location: /sang5/cart/show'); // Redirect on invalid action
+        header('Location: /php_inclass_m5/cart/show'); // Redirect on invalid action
       }
     
       $originalQuantity = (int) $_POST['originalQuantity']; // Cast to integer
@@ -40,7 +40,7 @@ class CartController
       }
     
       // Redirect back to cart view
-      header('Location: /sang5/cart/show');
+      header('Location: /php_inclass_m5/cart/show');
     }
     
     // public function updateQuality($id)
@@ -53,7 +53,7 @@ class CartController
     //             break;
     //         }
     //     }
-    //     header('Location: /sang5/cart/show');
+    //     header('Location: /php_inclass_m5/cart/show');
     // }
     public function decreaseQuantity($id)
     {
@@ -77,7 +77,7 @@ class CartController
         }
 
         // Redirect back to the cart page or wherever appropriate
-        header('Location: /sang5/cart/show');
+        header('Location: /php_inclass_m5/cart/show');
         exit();
     }
 
@@ -101,7 +101,7 @@ class CartController
         }
 
         // Redirect back to the cart page or wherever appropriate
-        header('Location: /sang5/cart/show');
+        header('Location: /php_inclass_m5/cart/show');
         exit();
     }
     public function Add($id)
@@ -131,7 +131,7 @@ class CartController
                 $_SESSION['cart'][] = $product;
             }
 
-            header('Location: /sang5/cart/show');
+            header('Location: /php_inclass_m5/cart/show');
         } else {
             echo "Không tìm thấy sản phẩm với ID này!";
         }
@@ -156,7 +156,7 @@ class CartController
         }
 
         // Redirect back to the cart page or wherever appropriate
-        header('Location: /sang5/cart/show');
+        header('Location: /php_inclass_m5/cart/show');
         exit();
     }
     function show()

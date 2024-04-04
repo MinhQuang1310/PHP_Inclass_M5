@@ -16,7 +16,7 @@ $productController->Index();
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-    <a href="/Sang5/Product/add" class="btn btn-primary">Them San Pham</a>
+    <a href="/php_inclass_m5/Product/add" class="btn btn-primary">Them San Pham</a>
     
 
     <!-- DataTales Example -->
@@ -89,7 +89,7 @@ $productController->Index();
                                             <td>
                                                 <?php
                                                 if (!empty($row->image)) {
-                                                    echo "<img src='/Sang5/" . $row->image . "' alt='' style='width: 100px; height: 100px;' />";
+                                                    echo "<img src='/php_inclass_m5/" . $row->image . "' alt='' style='width: 100px; height: 100px;' />";
                                                 } else {
                                                     echo "No Image";
                                                 }
@@ -98,7 +98,7 @@ $productController->Index();
                                             <td>
                                                 <i><a href="edit/<?= $row->id ?>" class="btn btn-primary">Edit</a></i>
                                                 <i><a href="#" class="btn btn-primary">Delete</a></i>
-                                                <i><a href="/sang5/cart/add/<?= $row->id ?>" class="btn btn-primary">Add To Cart</a></i>
+                                                <i><a href="/php_inclass_m5/cart/add/<?= $row->id ?>" class="btn btn-primary">Add To Cart</a></i>
                                             </td>
                                         </tr>
                                     <?php endwhile; ?>

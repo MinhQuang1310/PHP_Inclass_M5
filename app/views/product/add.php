@@ -1,5 +1,5 @@
 <?php
-include_once 'C:/xampp/htdocs/Sang5/app/views/share/header.php'
+include_once 'C:/xampp/htdocs/php_inclass_m5/app/views/share/header.php'
     ?>
 
 <?php
@@ -16,7 +16,7 @@ if (isset ($errors)) {
     <div class="text-center">
         <h1 class="h4 text-gray-900 mb-4">Them San Pham</h1>
     </div>
-    <form class="user" action="/Sang5/Product/save" method="post" enctype="multipart/form-data">
+    <form class="user" action="/php_inclass_m5/Product/save" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <input type="text" class="form-control form-control-user" id="name" aria-describedby="name"
                 placeholder="Name" name="name">
@@ -40,5 +40,5 @@ if (isset ($errors)) {
 </div>
 
 <?php
-include_once 'C:/xampp/htdocs/Sang5/app/views/share/footer.php'
+include_once 'C:/xampp/htdocs/php_inclass_m5/app/views/share/footer.php'
     ?>

@@ -4,7 +4,7 @@ include_once 'app/views/share/header.php';
 
 <div class="row">
 
-    <a href="/sang5/product/add" class="btn btn-primary btn-icon-split">
+    <a href="/php_inclass_m5/product/add" class="btn btn-primary btn-icon-split">
         <span class="icon text-white-50">
             <i class="fas fa-flag"></i>
         </span>
@@ -28,7 +28,7 @@ include_once 'app/views/share/header.php';
                     <tr>
                         <th>
                             <?= $row['id'] ?>
-                            <a class="btn btn-danger" href="/sang5/cart/add/<?= $row['id'] ?>">ADD TO CART</a>
+                            <a class="btn btn-danger" href="/php_inclass_m5/cart/add/<?= $row['id'] ?>">ADD TO CART</a>
                         </th>
                         <th><?= $row['name'] ?></th>
                         <th><?= $row['description'] ?></th>
@@ -38,14 +38,14 @@ include_once 'app/views/share/header.php';
                             if (empty($row['image']) || !file_exists($row['image'])) {
                                 echo "No Image!";
                             } else {
-                                echo "<img src='/sang5/" . $row['image'] . "' alt='' />";
+                                echo "<img src='/php_inclass_m5/" . $row['image'] . "' alt='' />";
                             }
                             ?>
 
                         </th>
                         <th><?= $row['price'] ?></th>
                         <th>
-                            <a href="/sang5/product/edit/<?=$row['id']?>">
+                            <a href="/php_inclass_m5/product/edit/<?=$row['id']?>">
                                 Edit
                             </a>
                         | Delete</th>
